@@ -5,17 +5,7 @@ DATADIR="/znc-data"
 
 # Build modules from source.
 if [ -d "${DATADIR}/modules" ]; then
-  pushd
-  # Find module sources.
-  modules=$(find "${DATADIR}/modules" -name "*.cpp")
-
-  # Build modules.
-  for module in $modules; do
-    echo "Building module $module..."
-    cd "$(dirname "$module")"
-    znc-buildmod "$module"
-  done
-  popd
+  find "${DATADIR}/modules" -name "*.cpp" -execdir znc-buildmod {} \;
 fi
 
 # Create default config if it doesn't exist
