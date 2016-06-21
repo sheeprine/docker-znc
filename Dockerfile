@@ -4,7 +4,7 @@ MAINTAINER Stephane Albert "sheeprine@nullplace.com"
 ENV ZNC_VERSION 1.6.3
 
 ADD "http://znc.in/releases/archive/znc-${ZNC_VERSION}.tar.gz" /src/
-RUN apk add --no-cache findutils sudo autoconf automake gettext-dev make g++ \
+RUN apk add --no-cache sudo autoconf automake gettext-dev make g++ \
     openssl-dev pkgconfig perl-dev swig zlib-dev ca-certificates \
     && cd /src \
     && tar -xzf "znc-${ZNC_VERSION}.tar.gz" && cd "znc-${ZNC_VERSION}" \

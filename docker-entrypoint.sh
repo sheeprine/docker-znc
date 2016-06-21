@@ -5,7 +5,8 @@ DATADIR="/znc-data"
 
 # Build modules from source.
 if [ -d "${DATADIR}/modules" ]; then
-  find "${DATADIR}/modules" -name "*.cpp" -execdir znc-buildmod {} \;
+  cd "${DATADIR}/modules"
+  find . -name "*.cpp" -exec znc-buildmod {} \;
 fi
 
 # Create default config if it doesn't exist
