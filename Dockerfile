@@ -1,7 +1,7 @@
 FROM alpine:latest
 MAINTAINER Stephane Albert "sheeprine@nullplace.com"
 
-ENV ZNC_VERSION 1.6.1
+ENV ZNC_VERSION 1.6.3
 
 RUN apk add --no-cache sudo autoconf automake gettext-dev make g++ \
     openssl-dev pkgconfig perl-dev swig zlib-dev ca-certificates \
